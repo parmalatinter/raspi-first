@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from he import He
-from led import Led
+from . import He
+from . import Led
 
 def start():
     he = He()

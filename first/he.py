@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import helpers
+from . import helpers
 
 class He:
     def get_hmm(self):
@@ -10,4 +10,4 @@ class He:
     def hmm(self):
         """Contemplation..."""
         if helpers.get_answer():
-            print(get_hmm())
+            print(self.get_hmm())
