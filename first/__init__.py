@@ -1,1 +1,1 @@
-from .core import hmm, get_hmm
+from .core import He

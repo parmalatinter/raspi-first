@@ -9,7 +9,8 @@ class AdvancedTestSuite(unittest.TestCase):
     """Advanced test cases."""
 
     def test_thoughts(self):
-        self.assertEqual(first.get_hmm(), 'hmmm...')
+        he = first.He()
+        self.assertEqual(he.get_hmm(), 'hmmm...')
 
 
 if __name__ == '__main__':
