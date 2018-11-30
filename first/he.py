@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import helpers
+from . import helpers
 
 class He:
     def get_hmm(self):

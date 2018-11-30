@@ -25,3 +25,6 @@ https://qiita.com/Kensuke-Mitsuzawa/items/7717f823df5a30c27077
 
 # Emulator for GPIO
 -e git+https://github.com/nosix/raspberry-gpio-emulator/
+
+# Grove lib
+-e https://github.com/DexterInd/GrovePi
