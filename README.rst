@@ -13,7 +13,7 @@ If you want to learn more about ``setup.py`` files, check out `this repository <
 
 # HOW TO INSTALL
 
-python setup.py install
+python3 setup.py install
 
 # HOW TO TEST
 

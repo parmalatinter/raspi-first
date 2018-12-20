@@ -10,4 +10,4 @@ class He:
     def hmm(self):
         """Contemplation..."""
         if helpers.get_answer():
-            print(get_hmm())
+            print(self.get_hmm())

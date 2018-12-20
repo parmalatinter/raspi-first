@@ -1,21 +1,48 @@
 # -*- coding: utf-8 -*-
-import platform
-if platform.system() == 'Linux' :
 
-    from time import sleep
-    
-    import RPi.GPIO as GPIO
-    
-    class Led:
-        def do_flash(self):
-            GPIO.setmode(GPIO.BCM)
-            GPIO.setup(25, GPIO.OUT)
-    
-            while True:
-                GPIO.output(25, GPIO.HIGH)
-                sleep(0.5)
-                GPIO.output(25, GPIO.LOW)
-                sleep(0.5)
-    
-    test = Led()
-    test.do_flash()
+import time
+import grovepi
+
+
+class Led:
+    def do_flash(self):
+        print(1)
+
+        # Connect the Grove LED to digital port D5
+        # SIG,NC,VCC,GND
+        led = 5
+
+        # Digital ports that support Pulse Width Modulation (PWM)
+        # D3, D5, D6
+
+        # Digital ports that do not support PWM
+        # D2, D4, D7, D8
+
+        grovepi.pinMode(led, "OUTPUT")
+        time.sleep(1)
+        i = 0
+
+        while True:
+            try:
+                # Reset
+                if i > 255:
+                    i = 0
+
+                # Current brightness
+                print (i)
+
+                # Give PWM output to LED
+                grovepi.analogWrite(led, i)
+
+                # Increment brightness for next iteration
+                i = i + 20
+                time.sleep(.5)
+
+            except KeyboardInterrupt:
+                grovepi.analogWrite(led, 0)
+                break
+            except IOError:
+                print ("Error")
+
+test = Led()
+test.do_flash()
