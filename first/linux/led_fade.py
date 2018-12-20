@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import time
 import grovepi
 
@@ -28,7 +29,9 @@ class Led_fade:
         # Full value of the rotary angle is 300 degrees, as per it's specs (0 to 300)
         full_angle = 300
 
-        while True:
+        is_loop = True
+
+        while is_loop:
             try:
                 # Read sensor value from potentiometer
                 sensor_value = grovepi.analogRead(potentiometer)
@@ -52,6 +55,7 @@ class Led_fade:
                 break
             except IOError:
                 print ("Error")
+            is_loop = os.environ.get('IS_PROD')
 
 
 test = Led_fade()

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 import time
 import grovepi
 
@@ -22,7 +23,9 @@ class Led:
         time.sleep(1)
         i = 0
 
-        while True:
+        is_loop = True
+
+        while is_loop:
             try:
                 # Reset
                 if i > 255:
@@ -43,6 +46,7 @@ class Led:
                 break
             except IOError:
                 print ("Error")
+            is_loop = os.environ.get('IS_PROD')
 
 test = Led()
 test.do_flash()
