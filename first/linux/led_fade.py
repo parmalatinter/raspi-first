@@ -57,6 +57,3 @@ class Led_fade:
                 print ("Error")
             is_loop = os.environ.get('IS_PROD')
 
-
-test = Led_fade()
-test.do_flash()

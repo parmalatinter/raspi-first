@@ -47,6 +47,3 @@ class Led:
             except IOError:
                 print ("Error")
             is_loop = os.environ.get('IS_PROD')
-
-test = Led()
-test.do_flash()
